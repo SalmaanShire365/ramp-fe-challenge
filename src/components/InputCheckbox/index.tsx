@@ -21,6 +21,6 @@ export const InputCheckbox: InputCheckboxComponent = ({ id, checked = false, dis
         disabled={disabled}
         onChange={() => onChange(!checked)}
       />
-    </div>
+    </div>  
   )
 }

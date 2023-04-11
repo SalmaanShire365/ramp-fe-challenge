@@ -32,8 +32,15 @@ export function App() {
   const loadTransactionsByEmployee = useCallback(
     async (employeeId: string) => {
       paginatedTransactionsUtils.invalidateData()
+
+    if(employeeId === EMPTY_EMPLOYEE.id) {
+      await paginatedTransactionsUtils.fetchAll()
+
+    } else {
       await transactionsByEmployeeUtils.fetchById(employeeId)
-    },
+    }
+
+  },
     [paginatedTransactionsUtils, transactionsByEmployeeUtils]
   )
 
